@@ -1,0 +1,122 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Masonry Layout con CSS Grid</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+</head>
+<body>
+
+
+<div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-16">
+    <!--<h1>Анна</h1>-->
+
+    <div class="mx-auto columns-1 lg:columns-3 md:columns-2 sm:columns-2 xs:columns-1">
+        <div class="grid gap-4">
+            <div class="bg-white p-4">
+                
+                <span id="demo" class="text-slate-700"></span>
+                <br><br>
+                <span id="demo1" class="mt-5 pt-5 text-slate-700 font-bold"></span>
+            </div>
+            <div class="bg-white p-4">
+                <img class="mb-3 shadow-2xl" src="./img/1.jpg" alt="">
+                <span class="text-slate-700">#неподражаемая</span>
+            </div>
+            <div class="bg-white p-4">
+                <img class="mb-3 shadow-2xl" src="./img/2.jpg" alt="">
+                <span class="text-slate-700">#ослепительная</span>
+            </div>
+            <div class="bg-white p-4">
+                <img class="mb-3 shadow-2xl" src="./img/3.jpg" alt="">
+                <span class="text-slate-700">#сказочная</span>
+            </div>
+        </div>
+        <div class="grid gap-4">
+            <div class="bg-white p-4">
+                <img class="mb-3 shadow-2xl" src="./img/4.jpg" alt="">
+                <span class="text-slate-700">#фантастическая</span>
+            </div>
+            <div class="bg-white p-4">
+                <img class="mb-3 shadow-2xl" src="./img/5.jpg" alt="">
+                <span class="text-slate-700">#умная</span>
+            </div>
+            <div class="bg-white p-4">
+                <img class="mb-3 shadow-2xl" src="./img/6.jpg" alt="">
+                <span class="text-slate-700">#талантливая</span>
+            </div>
+        </div>
+        <div class="grid gap-4">
+            <div class="bg-white p-4">
+                <img class="mb-3 shadow-2xl" src="./img/7.jpg" alt="">
+                <span class="text-slate-700">#элегантная</span>
+            </div>
+            <div class="bg-white p-4">
+                <img class="mb-3 shadow-2xl" src="./img/8.jpg" alt="">
+                <span class="text-slate-700">#лучезарная</span>
+            </div>
+            <div class="bg-white p-4">
+                <img class="mb-3 shadow-2xl" src="./img/9.jpg" alt="">
+                <span class="text-slate-700">#очаровательная</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    
+ <script>
+    let i = 0;
+    let j = 0;
+let text = "Пусть каждый день будет наполнен чудесами и приятными сюрпризами, а всё задуманное пусть получается легко и непринужденно. Любви, здоровья, удачи, надежных друзей и множества новых приятных знакомств!";
+let textq = "C любовью, команда СКИФ";
+let speed = 100;
+
+
+
+
+function typeWriterCopy() {
+  // console.log(button.id);
+  
+   if(j < textq.length) {
+       document.getElementById("demo1").innerHTML += textq.charAt(j);
+       j++;
+       setTimeout(typeWriterCopy, speed);
+   }
+}
+
+function typeWriterMain(callback) {
+  // console.log(button.id);
+  
+   if(i < text.length) {
+       document.getElementById("demo").innerHTML += text.charAt(i);
+       i++;
+    
+        setTimeout(typeWriterMain, speed);
+    
+
+
+   } else {
+    typeWriterCopy()
+    console.log('всё')
+   }
+}
+
+
+
+typeWriterMain();
+//typeWriterMain(typeWriterCopy);
+//typeWriterCopy();
+ </script>
+
+    
+</body>
+</html>
+
